@@ -10,6 +10,8 @@
    - Comando para criar um projeto `ng new nome-projeto`
    - Comando para habilitar o localhost `ng serve`
    - Comando para criar um componente com arquivos de css,ts e testes `ng generate component nomePasta/nomeComponente`
+
+  `ng new my-app --no-standalone --routing --ssr=false`
   
 </details>
 
