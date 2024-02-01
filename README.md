@@ -78,6 +78,47 @@
   
   <app-inerpolacao></app-inerpolacao>
   ```
-  
+  <details>
+    <summary>Compartilhamento de dados</summary>
+   
+  - 1- Declara o dado a ser transmitido na classe pai
+  - 2- Declara a variável  que ira receber o valor na classe na classe filho com o decorator @Input
+  - 3- na tag do componente filho, faça a vinculação de propriedades `[propFilho]="propPai"`
+  - 4- `@Input` decorator usado para definir que uma propriedade pode receber dados externos
+  ```javascript
+  // componente-pai.component.ts
+  import { Component } from '@angular/core';
+
+   @Component({
+     selector: 'app-componente-pai',
+    templateUrl: './componente-pai.component.html',
+     styleUrls: ['./componente-pai.component.css']
+   })
+   export class ComponentePaiComponent {
+     heranca: string = 'Dados herdados';
+   }
+   ```
+    ```javascript
+    // componente-filho.component.ts
+    import { Component, Input } from '@angular/core';
+
+    @Component({
+      selector: 'app-componente-filho',
+      templateUrl: './componente-filho.component.html',
+      styleUrls: ['./componente-filho.component.css']
+    })
+    export class ComponenteFilhoComponent {
+      @Input() dadosHerdados: string = '';
+    }
+
+    ```
+    ```javascript
+    <!-- componente-pai.component.html -->
+    <app-componente-filho [dadosHerdados]="herança"></app-componente-filho>
+
+    ```
+    
+    
+  </details>
 
 </details>
