@@ -149,11 +149,55 @@
 
   <p *ngIf="mostrarElemento">Este elemento será exibido se mostrarElemento for verdadeiro.</p>
   ```
+  </details>
+
+  <details>
+    <summary>Eventos</summary>
+
+  # Eventos
+
+  #### click
+   - A função é chamada na tag html
+  *SINTAXE DE DECLARAÇÃO DE EVENTO*
+  `<button (evento)="nomeFuncao()"></button>`
+  
+
+  ```javascript
+  // botao.component.html
+  <button (click)="btnFuncao">Clique</button>
+  ```
+  ```javascript
+  // app.component.ts
+
+  import { Component } from '@angular/core';
+
+  @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+  })
+  export class AppComponent {
+    mostrarElemento: boolean = true;
+
+    btnFuncao():void{
+      this.mostrarElemento = false;
+    }
+  }
+
+  ```   
+  ```javascript
+  <!-- app.component.html -->
+  <h1>Bem-vindo ao meu aplicativo Angular!</h1>
+
+  <p *ngIf="mostrarElemento">Este elemento será exibido se mostrarElemento for verdadeiro.</p>
+  ```
+  
 
 
 
 
   
+    
   </details>
 
 </details>
