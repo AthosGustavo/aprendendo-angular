@@ -98,25 +98,24 @@
      heranca: string = 'Dados herdados';
    }
    ```
-    ```javascript
-    // componente-filho.component.ts
-    import { Component, Input } from '@angular/core';
+   ```javascript
+   // componente-filho.component.ts
+   import { Component, Input } from '@angular/core';
 
-    @Component({
-      selector: 'app-componente-filho',
-      templateUrl: './componente-filho.component.html',
-      styleUrls: ['./componente-filho.component.css']
-    })
-    export class ComponenteFilhoComponent {
-      @Input() dadosHerdados: string = '';
-    }
+  @Component({
+     selector: 'app-componente-filho',
+     templateUrl: './componente-filho.component.html',
+     styleUrls: ['./componente-filho.component.css']
+   })
+   export class ComponenteFilhoComponent {
+     @Input() dadosHerdados: string = '';
+   }
 
-    ```
-    ```javascript
-    <!-- componente-pai.component.html -->
-    <app-componente-filho [dadosHerdados]="herança"></app-componente-filho>
-
-    ```
+   ```
+   ```javascript
+   <!-- componente-pai.component.html -->
+   <app-componente-filho [dadosHerdados]="herança"></app-componente-filho>
+   ```
     
     
   </details>
