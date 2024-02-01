@@ -46,6 +46,11 @@
   #### styleUrls
    - lista de caminhos para arquivos ou aquivo css do componente
 
+  ### Passo a passo de como criar um componente
+   - 1 - No arquivo input.component.html declare a tag html referente ao input
+   - 2 - No arquivo app.component.html, declare o seletor que identifica o componente `<app-input></app-input>`
+     
 
+  
 
 </details>
