@@ -119,38 +119,7 @@
     
     
   </details>
-  <details>
-    <summary>Renderizamento</summary>
-    
-  # Renderizamento
-  ## Renderizamento condicial
-  ### Renderizamento condicional com ngIf
-  #### Diretiva ngIf
-   - Usada no Angular para exibir ou ocultar elementos HTML com base em uma expressão condicional.
-   - ngIf adiciona e remove elementos do DOM com base em uma condicional
-  ```javascript
-  // app.component.ts
-
-  import { Component } from '@angular/core';
-
-  @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
-  })
-  export class AppComponent {
-    mostrarElemento: boolean = true;
-  }
-
-  ```   
-  ```javascript
-  <!-- app.component.html -->
-  <h1>Bem-vindo ao meu aplicativo Angular!</h1>
-
-  <p *ngIf="mostrarElemento">Este elemento será exibido se mostrarElemento for verdadeiro.</p>
-  ```
-  </details>
-
+  
   <details>
     <summary>Eventos</summary>
 
@@ -192,12 +161,66 @@
   <p *ngIf="mostrarElemento">Este elemento será exibido se mostrarElemento for verdadeiro.</p>
   ```
   
+  </details>
 
-
-
-
-  
+  <details>
+    <summary>Renderização</summary>
     
+  # Renderização
+  ### Renderização com ngFor
+   - Renderizando listas
+  
+  ```javascript
+  // app.component.ts
+
+  import { Component } from '@angular/core';
+
+  @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+  })
+  export class AppComponent {
+    nomes=['athos','gustavo','fabricio'];
+  }
+
+  ```
+  ```javascript
+  <!-- app.component.html -->
+  <h1>Meus nomes</h1>
+
+  <ul>
+    <li*ngFor="let nome of nomes">
+      Nome:{{nome}}
+    </li>
+  </ul>
+  ```
+  
+  ### Renderização condicional com ngIf
+  #### Diretiva ngIf
+   - Usada no Angular para exibir ou ocultar elementos HTML com base em uma expressão condicional.
+   - ngIf adiciona e remove elementos do DOM com base em uma condicional
+  ```javascript
+  // app.component.ts
+
+  import { Component } from '@angular/core';
+
+  @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+  })
+  export class AppComponent {
+    mostrarElemento: boolean = true;
+  }
+
+  ```   
+  ```javascript
+  <!-- app.component.html -->
+  <h1>Bem-vindo ao meu aplicativo Angular!</h1>
+
+  <p *ngIf="mostrarElemento">Este elemento será exibido se mostrarElemento for verdadeiro.</p>
+  ```
   </details>
 
 </details>
