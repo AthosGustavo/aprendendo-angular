@@ -50,7 +50,34 @@
    - 1 - No arquivo input.component.html declare a tag html referente ao input
    - 2 - No arquivo app.component.html, declare o seletor que identifica o componente `<app-input></app-input>`
      
+  ### Interpolação de dados
+   - Interpolando variáveis em tags html
+  ```javascript
+  //interpolacao.component.html
 
+  <p>Meu nome é: {{nome}}</p>
+  ```
+  ```javascript
+  //interpolacao.component.ts
+
+  import { Component } from '@angular/core';
+
+  @Component({
+    selector: 'app-inerpolacao',
+    templateUrl: './inerpolacao.component.html',
+    styleUrl: './inerpolacao.component.css'
+  })
+  export class InerpolacaoComponent {
+
+    nome: string = 'Athos';
+  }
+
+  ```
+  ```javascript
+  //app.component.html
+  
+  <app-inerpolacao></app-inerpolacao>
+  ```
   
 
 </details>
