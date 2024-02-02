@@ -267,6 +267,26 @@
   ```
   
 </details>
+<details>
+  <summary>Interfaces</summary>
+
+  # Interface
+   - No Angular, as interface são usadas para representar entidades do back-end.Se no back-end existir uma entidade chamada pessoa com os atributos nome, idade e altura, esses atributos serão tipados e representados por meio de uma interface.
+
+  *EXEMPLO*
+  ```javascript
+  // user.model.ts
+  export interface User {
+    id: number;
+    name: string;
+    email: string;
+  }
+  ```
+
+  
+
+  
+</details>
 
 <details>
   <summary>Service</summary>
