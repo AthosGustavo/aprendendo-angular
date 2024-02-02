@@ -231,6 +231,7 @@
   # Formulários
   ### Diretiva ngModule
    - O ngModule é uma diretiva que permite vincular o valor digitado em um input em uma variável, qualquer alteração de valor feita no input será refletida na variável.
+  
   *SINTAXE*
   ```html
   [(ngModule)]="nomeVariavel"
