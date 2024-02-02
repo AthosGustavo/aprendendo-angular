@@ -267,3 +267,12 @@
   ```
   
 </details>
+
+<details>
+  <summary>Service</summary>
+
+  # Service
+   - É aqui que ficam as requisições para as APIs
+   - Comando para criar a pasta service `bg generate service services/<nome>`
+   - 
+</details>
