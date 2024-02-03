@@ -16,6 +16,24 @@
 </details>
 
 <details>
+  <summary>Escopo de classe e declaração de funções e variáveis</summary>
+
+  # Escopo de classe e declaração de funções e variáveis
+
+  ### Tips
+
+  - Obs 1:*Ao declarar a função com a palavra `function` a palavra this perde o seu
+  comportamento padrão, é como o this apontasse para dentro da função e não mais para classe.*
+
+  - Obs 2:*Dentro do escopo global da classe, nao se usa `let`, `const` e `var` para declarar métodos.
+Essas palavras são usadas fora da classe e dentro de métodos que estão dentro da classe.*
+
+  - Obs 3:*Qualque método ou atributo que seja da classe e que está sendo acessado dentro de um método
+da classe, deve ser usada a palavra `this`.*
+  
+</details>
+
+<details>
   <summary>Componentes</summary>
 
   # Componentes
