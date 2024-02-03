@@ -98,11 +98,21 @@ da classe, deve ser usada a palavra `this`.*
   ```
   <details>
     <summary>Compartilhamento de dados</summary>
-   
+
+   # Compartilhamento de dados
+   ### Passo a passo
+  - 1- Uma propriedade `X` é declarada na classe filha com o decorator `@Input`
+  - 2- Essa propriedade `X` é colocada no html do componente filho
+  - 3- A propriedade recebe um valor externamente no componente pai
+  - 4- No componente pai, declare a tag `selector` filho dentro da tag pai e passe os valores   `[propFilho]="valor"` 
+  - 5- `@Input` decorator usado para definir que uma propriedade pode receber dados externos
+
+  *EXEMPLO 2*
   - 1- Declara o dado a ser transmitido na classe pai
   - 2- Declara a variável  que ira receber o valor na classe na classe filho com o decorator @Input
   - 3- na tag do componente filho, faça a vinculação de propriedades `[propFilho]="propPai"`
   - 4- `@Input` decorator usado para definir que uma propriedade pode receber dados externos
+  - 
   ```javascript
   // componente-pai.component.ts
   import { Component } from '@angular/core';
