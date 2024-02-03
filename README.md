@@ -310,7 +310,14 @@ da classe, deve ser usada a palavra `this`.*
   <summary>Service</summary>
 
   # Service
+
+*Em Angular, os serviços são frequentemente usados como dependências.
+Quando você declara um serviço como um provedor no módulo ou no próprio
+componente, o Angular gerencia a criação e a injeção dessas dependências
+automaticamente.Ao injetar uma dependência (como um serviço) em um componente,
+você está dizendo ao Angular para fornecer uma instância dessa dependência
+quando o componente for criado.*
+
    - É aqui que ficam as requisições para as APIs
    - Comando para criar a pasta service `bg generate service services/<nome>`
-   - 
 </details>
