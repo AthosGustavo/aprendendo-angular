@@ -275,9 +275,12 @@ da classe, deve ser usada a palavra `this`.*
   <p>{{pessoa.nome}}</p>
   ```
   ### Event binding, template -> componente
+
+  ### Two way data-binding
+   - A propriedade "Two-way data binding" (ligação de dados bidirecional) é um recurso que permite a sincronização automática de dados entre o modelo (template) e o componente. Em outras palavras, ela permite que as alterações feitas no modelo sejam refletidas no componente e vice-versa,
   
   
-  ### Diretiva ngModule
+  #### Diretiva ngModul
    - O ngModule é uma diretiva que permite vincular o valor digitado em um input em uma variável, qualquer alteração de valor feita no input será refletida na variável.
   
   *SINTAXE*
