@@ -354,3 +354,30 @@ quando o componente for criado.*
    - É aqui que ficam as requisições para as APIs
    - Comando para criar a pasta service `bg generate service services/<nome>`
 </details>
+
+
+<details>
+  <summary>Requisições</summary>
+
+  # Requisições
+
+  ## pacote HttpClient
+   - A instância da classe HttpCLient retorna métodos HTTP `varvarHttpClientClient.post<tipoRetorno>`
+   - Os métodos http aceitam em seu parâmetro a `url` e o dado a ser enviado.
+
+  *EXEMPLOS*
+  ```javascript
+  this.varHttpClient.get<TipoDoDado>(url);
+  this.varHttpClient.post<TipoDoDado>(url, corpoDoPedido);
+  this.varHttpClient.put<TipoDoDado>(url, corpoDoPedido);
+  this.varHttpClient.delete<TipoDoDado>(url);
+  ```
+  ### Observable
+   - Observable é um tipo de retorno presente em operações assincronas como requisições HTTP
+   - O tipo pode retornar um erro e um valor,a exemplo de uma promisse
+
+  ### subscribe
+   - O tipo Observable retorna um método chamada subscribe e esse método é um tipo de notificação que retorna um valor.
+
+
+</details>
