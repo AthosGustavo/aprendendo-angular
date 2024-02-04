@@ -257,6 +257,26 @@ da classe, deve ser usada a palavra `this`.*
   <summary>Formulários</summary>
   
   # Formulários
+
+  ## Propriedades de comunicação entre template e componente
+   - `template` representa o arquivo .html do componente
+   - `componente` representa o arquivo .ts
+
+  ### Property Binding
+   - "property binding" é um recurso que permite vincular uma propriedade de um elemento do componente a uma expressão no modelo (template).
+
+  #### Vinculando propriedades no fluxo componente -> template
+  *SÍNTAXE*
+  ```html
+  [propTagHtml] = "propComponente"    // `A propriedade html recebe o valor da propriedade do componente`
+  ```
+  *Vinculando valor de tag a uma propriedade componente*
+  ```html
+  <p>{{pessoa.nome}}</p>
+  ```
+  ### Event binding, template -> componente
+  
+  
   ### Diretiva ngModule
    - O ngModule é uma diretiva que permite vincular o valor digitado em um input em uma variável, qualquer alteração de valor feita no input será refletida na variável.
   
