@@ -278,8 +278,44 @@ da classe, deve ser usada a palavra `this`.*
 
   ### Two way data-binding
    - A propriedade "Two-way data binding" (ligação de dados bidirecional) é um recurso que permite a sincronização automática de dados entre o modelo (template) e o componente. Em outras palavras, ela permite que as alterações feitas no modelo sejam refletidas no componente e vice-versa,
+   
+  #### Diretiva ngModel
+   - O ngModule é uma diretiva que permite vincular o valor digitado em um input em uma variável, qualquer alteração de valor feita no input será refletida na variável.
   
-  ### EventEmmitter
+  *SINTAXE*
+  ```html
+  [(ngModule)]="nomeVariavel"
+  ```
+   - Para usar o ngModel, é necessário fazer a importação do pacote `FormsModule` no arquivo `app.module.ts` e declarar o `FormModule` na propriedade de imports.
+  ![Captura de tela de 2024-02-02 12-22-57](https://github.com/AthosGustavo/aprendendo-angular/assets/112649935/1d2f6a7c-f6fb-4f8a-8079-a8900d73b28a)
+
+  *EXEMPLO*
+  ```html
+  <div>
+    <label>Nome</label>
+    <input [(ngModel)]="nome" placeholder="Digite o seu nome">
+    <button (click)="salvarNome()">Salvar</button>
+  </div>
+  ```
+  ```javascript
+  import { Component } from '@angular/core';
+
+  @Component({
+    selector: 'app-data-binding',
+    templateUrl: './data-binding.component.html',
+    styleUrl: './data-binding.component.css'
+  })
+  export class DataBindingComponent {
+    nome: string = '';
+    listaNomes:string [] = [];
+  
+    salvarNome():void {
+      console.log(this.nome);
+    }
+  }
+
+  ```
+ ### EventEmmitter
   *Componente filho passando dados para componente pai*
 
   *LÓGICA*
@@ -342,44 +378,6 @@ da classe, deve ser usada a palavra `this`.*
       this.contadorExibido=event;
     }
 
-  }
-
-  ```
-  
-  
-  #### Diretiva ngModel
-   - O ngModule é uma diretiva que permite vincular o valor digitado em um input em uma variável, qualquer alteração de valor feita no input será refletida na variável.
-  
-  *SINTAXE*
-  ```html
-  [(ngModule)]="nomeVariavel"
-  ```
-   - Para usar o ngModel, é necessário fazer a importação do pacote `FormsModule` no arquivo `app.module.ts` e declarar o `FormModule` na propriedade de imports.
-  ![Captura de tela de 2024-02-02 12-22-57](https://github.com/AthosGustavo/aprendendo-angular/assets/112649935/1d2f6a7c-f6fb-4f8a-8079-a8900d73b28a)
-
-  *EXEMPLO*
-  ```html
-  <div>
-    <label>Nome</label>
-    <input [(ngModel)]="nome" placeholder="Digite o seu nome">
-    <button (click)="salvarNome()">Salvar</button>
-  </div>
-  ```
-  ```javascript
-  import { Component } from '@angular/core';
-
-  @Component({
-    selector: 'app-data-binding',
-    templateUrl: './data-binding.component.html',
-    styleUrl: './data-binding.component.css'
-  })
-  export class DataBindingComponent {
-    nome: string = '';
-    listaNomes:string [] = [];
-  
-    salvarNome():void {
-      console.log(this.nome);
-    }
   }
 
   ```
