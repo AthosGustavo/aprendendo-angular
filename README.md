@@ -392,7 +392,10 @@ da classe, deve ser usada a palavra `this`.*
   @ViewChild('minhaDiv') inputNome: ElementRef;
     console.log(this.inputNome.nativeElement.value);
   ```
-  
+<details>
+  <summary>Formulário Reativo</summary>
+</details>
+
 </details>
 <details>
   <summary>Interfaces</summary>
