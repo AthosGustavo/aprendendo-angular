@@ -381,6 +381,17 @@ da classe, deve ser usada a palavra `this`.*
   }
 
   ```
+
+  ### @ViewChild
+   - O decorator `@ViewChild` permite acessar o DOM de uma tag HTML
+   - *SINTAXE*: `@ViewChild('#idTag') nomeVariavel:ElementRef`
+   - Por meio deste decorator é possível obter propriedades do DOM
+
+  *EXEMPLO*
+  ```javascript
+  @ViewChild('minhaDiv') inputNome: ElementRef;
+    console.log(this.inputNome.nativeElement.value);
+  ```
   
 </details>
 <details>
