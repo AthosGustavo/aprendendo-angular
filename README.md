@@ -279,8 +279,75 @@ da classe, deve ser usada a palavra `this`.*
   ### Two way data-binding
    - A propriedade "Two-way data binding" (ligação de dados bidirecional) é um recurso que permite a sincronização automática de dados entre o modelo (template) e o componente. Em outras palavras, ela permite que as alterações feitas no modelo sejam refletidas no componente e vice-versa,
   
+  ### EventEmmitter
+  *Componente filho passando dados para componente pai*
+
+  *LÓGICA*
+   - No componente filho é chamada a uma função `emit` por meio da instância da classe `EventEmmitter`, a função `emit` permite transmitir um valor para uma propriedade do componente pai, no caso, o parâmetro de uma função.
+   - Além disso, na instância da classe, sinalizamos a variável com o decorator `@OutPut`, pois indica que uma informação será lançada para fora do componente.
+
+  ```javascript
+  import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+
+  @Component({
+    selector: 'app-input-filho',
+    templateUrl: './input-filho.component.html',
+    styleUrls: ['./input-filho.component.css']
+  })
+  export class InputFilhoComponent implements OnInit {
+    constructor() { }
+
+    ngOnInit() {
+    }
   
-  #### Diretiva ngModul
+    @Output() componenteFilhoEmite = new EventEmitter();
+
+    valor:number = 0;
+    somar():void{
+      this.valor++;
+      this.componenteFilhoEmite.emit(this.valor);
+    }
+    subtrair():void{
+      this.valor--;
+      this.componenteFilhoEmite.emit(this.valor);
+    }
+
+  }
+
+  ```
+  ```javascript
+  <div>
+    <app-input-filho (componenteFilhoEmite)="componentePaiRecebe($event)"></app-input-filho>
+    <p>{{contadorExibido}}</p>
+  </div>
+  ```
+
+   - No componente pai, declaramos a função `componentePaiRecebe(event)` e assim capturamos o valor emitido pelo componente filho.
+  ```javascript
+    import { Component, Input, OnInit } from '@angular/core';
+
+    @Component({
+      selector: 'app-componente-pai',
+      templateUrl: './componente-pai.component.html',
+      styleUrls: ['./componente-pai.component.css']
+    })
+    export class ComponentePaiComponent implements OnInit {
+
+    constructor() { }
+
+    ngOnInit() {
+    }
+    @Input() contadorExibido:string;
+    componentePaiRecebe(event):void{
+      this.contadorExibido=event;
+    }
+
+  }
+
+  ```
+  
+  
+  #### Diretiva ngModel
    - O ngModule é uma diretiva que permite vincular o valor digitado em um input em uma variável, qualquer alteração de valor feita no input será refletida na variável.
   
   *SINTAXE*
