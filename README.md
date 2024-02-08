@@ -395,9 +395,50 @@ da classe, deve ser usada a palavra `this`.*
 <details>
   <summary>Formulário Reativo</summary>
 
-  # Formulário Reativo
-  
-  
+ # Formulário Reativo
+
+ *IMPORTAÇÕES*
+  - `import { FormGroup, FormBuilder, Validators } from '@angular/forms';`
+  - `ReactiveFormsModule` deve ser importado em `app.module` e em `imports`
+ 
+ ### FormGroup
+ - classe que representa um grupo de controles em um formulário reativo.
+ 
+ ### Controllers
+ - Representam os inputs
+ 
+ ### FormBuilder
+ - classe que fornece métodos para simplificar a criação de instancias de FormGroup.
+ - Ao inves de criar manualmente a instancia de um FormGroup, o FormBuilder ajuda a definir a estrutura do formulario de maneira simples.
+
+ *EXEMPLO: CONSTRUINDO UM FORMULÁRIO*
+ ```javascript
+  formulario!: FormGroup;
+
+    constructor(
+      private formBuilder: FormBuilder,
+    ){}
+
+    ngOnInit(): void {
+     this.formulario = this.formBuilder.group({
+     numero: [''],
+     nome:['']
+   })
+ }
+ ```
+ ```javascript
+ numero: [valor inicial do input,[array para adicionar validações]]
+ ```
+ ## Declarando o formulpario reativo no html
+  - A propriedade `[formGroup]` deve ser declarada en tag `form` e deve receber como valor a variável do tipo `FormGroup`.
+
+ ```html
+ <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+  <input type="number" formControlName="numero" placeholder="Digite o seu número"/>
+  <input type="text" formControlName="nome" placeholder="Digite o seu nome"/>
+  <button type="submit">Enviar</button>
+</form>
+ ```
   
 </details>
 
@@ -417,7 +458,7 @@ da classe, deve ser usada a palavra `this`.*
     email: string;
   }
   ```
-
+ 
   
 
   
