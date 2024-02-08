@@ -453,7 +453,13 @@ nome:['',[Validators.required,Validators.minLength(4)]]
 
 #### Propriedade invalid
  - invalid é um método do objeto controller que retorna `true` se o controler estiver inválido e `false` se ele estiver válido.
-  
+
+#### Propriedade dirty
+ - Se o usuário interagir com o controler e digitar qualquer coisa, o controler é considerado `dirty`,caso contrário, se o valor do controler permanecer limpo, o controler é considerado `pristine`
+
+#### Propriedade touched
+ - Indica se o controle foi tocado pelo usuário, é semelhante a um evento ´onBlur´ ou ´focusOut´
+
 `<div *ngIf="nome && nome.invalid && (nome.dirty || nome.touched)" class="error-message">`
 
 </details>
