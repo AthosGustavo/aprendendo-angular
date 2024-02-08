@@ -462,6 +462,77 @@ nome:['',[Validators.required,Validators.minLength(4)]]
 
 `<div *ngIf="nome && nome.invalid && (nome.dirty || nome.touched)" class="error-message">`
 
+*EXEMPLO DE UM FORMULÁRIO VALIDADO*
+```html
+<form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+  <div>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" formControlName="nome" placeholder="Digite seu nome">
+    <div *ngIf="nome && nome.invalid && (nome.dirty || nome.touched)" class="error-message">
+      <p *ngIf="nome.errors && nome.errors['required']">O nome é obrigatório.</p>
+      <p *ngIf="nome.errors && nome.errors['minlength']">O nome deve ter no mínimo 4 caracteres.</p>
+    </div>
+  </div>
+  <div>
+    <label for="numero">Número de Celular:</label>
+    <input type="text" id="numero" formControlName="numero" placeholder="Digite o número de celular">
+    <div *ngIf="numero && numero.invalid && (numero.dirty || numero.touched)" class="error-message">
+      <p *ngIf="numero.errors && numero.errors['required']">O número de celular é obrigatório.</p>
+      <p *ngIf="numero.errors && numero.errors['minlength'] || numero.errors && numero.errors['maxlength']">O número de celular deve ter 11 dígitos.</p>
+    </div>
+  </div>
+  <button type="submit">Enviar</button>
+</form>
+
+```
+```javascript
+import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-formulario-reativo',
+  templateUrl: './formulario-reativo.component.html',
+  styleUrl: './formulario-reativo.component.css'
+})
+export class FormularioReativoComponent {
+
+  formulario!: FormGroup;
+
+
+  constructor(
+    private formBuilder: FormBuilder,
+  ){}
+
+  ngOnInit(): void {
+    this.formulario = this.formBuilder.group({
+      numero: ['',[Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+      nome:['',[Validators.required,Validators.minLength(4)]]
+    })
+  }
+
+  get nome(){
+    return this.formulario!.get('nome')
+  }
+  get numero(){
+    return this.formulario!.get('numero')
+  }
+
+
+  enviarFormulario():void{
+    //console.log(this.formulario.get('numero'));
+
+    if (this.formulario.valid){
+      console.log('Formulário enviado!')
+      console.log(`Nome:${this.formulario.value('nome')}`);
+      console.log(`Nome:${this.formulario.value('numero')}`);
+
+    }else{
+      console.log('Formulário inválido');
+    }
+  }
+}
+
+```
 </details>
 
 </details>
