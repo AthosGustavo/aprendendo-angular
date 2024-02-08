@@ -448,7 +448,14 @@ da classe, deve ser usada a palavra `this`.*
 numero: ['',[Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
 nome:['',[Validators.required,Validators.minLength(4)]]
 ```
+
+### Verificando a validade dos inputs e emitindo mensagens de erro
+
+#### Propriedade invalid
+ - invalid é um método do objeto controller que retorna `true` se o controler estiver inválido e `false` se ele estiver válido.
   
+`<div *ngIf="nome && nome.invalid && (nome.dirty || nome.touched)" class="error-message">`
+
 </details>
 
 </details>
