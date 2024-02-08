@@ -439,6 +439,15 @@ da classe, deve ser usada a palavra `this`.*
   <button type="submit">Enviar</button>
 </form>
  ```
+## Adicionando validação aos inputs
+
+*IMPORTAÇÕES*
+ - `import { FormGroup, FormBuilder, Validators } from '@angular/forms';`
+
+```javascript
+numero: ['',[Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+nome:['',[Validators.required,Validators.minLength(4)]]
+```
   
 </details>
 
