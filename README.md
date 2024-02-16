@@ -449,6 +449,8 @@ numero: ['',[Validators.required, Validators.minLength(11), Validators.maxLength
 nome:['',[Validators.required,Validators.minLength(4)]]
 ```
 
+*OBS*:Em algumas versões do Angular, para declarar mais de uma validação, é necessário declarar as validações dentro do método `Validators.compose([])`
+
 ### Verificando a validade dos inputs e emitindo mensagens de erro
 
 #### Propriedade invalid
