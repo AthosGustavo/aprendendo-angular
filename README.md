@@ -32,6 +32,36 @@ Essas palavras são usadas fora da classe e dentro de métodos que estão dentro
 da classe, deve ser usada a palavra `this`.*
   
 </details>
+<details>
+  <summary>Método construtor</summary>
+
+  # Método construtor
+
+  ## Como usar o método construtor
+
+  ### Usando o método construtor para instanciar classes e atribuir a uma propriedade da classe atual
+  ```javascript
+  export class MeuComponente {
+    mensagem: string;
+
+    constructor(servico: MeuServico) {
+      // Aqui, 'servico' é uma instância do seu serviço MeuServico
+      this.mensagem = servico.obterMensagem();
+    }
+  }
+  ```
+  ```javascript
+  export class BotaoComponent {
+    constructor(private httpClient: HttpClient){}
+    chamaApi():void{
+      this.httpClient
+    }
+  }
+  ```
+
+  ### Usando o método construtor para injeção de dependências
+  
+</details>
 
 <details>
   <summary>Componentes</summary>
