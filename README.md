@@ -612,8 +612,10 @@ quando o componente for criado.*
   # Requisições
 
   ## pacote HttpClient
-   - A instância da classe HttpCLient retorna métodos HTTP `varvarHttpClientClient.post<tipoRetorno>`
+   - A instância da classe HttpCLient retorna métodos HTTP `varHttpClient.post<tipoRetorno>`
    - Os métodos http aceitam em seu parâmetro a `url` e o dado a ser enviado.
+   - Importação no arquivo app.module.ts:`import { HttpClientModule } from '@angular/common/http';`
+   - Declaração do módulo em `imports:[HttpClientModule]`
 
   *EXEMPLOS*
   ```javascript
@@ -621,6 +623,33 @@ quando o componente for criado.*
   this.varHttpClient.post<TipoDoDado>(url, corpoDoPedido);
   this.varHttpClient.put<TipoDoDado>(url, corpoDoPedido);
   this.varHttpClient.delete<TipoDoDado>(url);
+  ```
+
+  #### Método GET
+  ```javascript
+  private urlApi:string = "https://api.github.com/users/AthosGustavo/repos";
+
+  constructor(private httpClient: HttpClient){}
+
+  getRepositorios(): Observable<any[]>{
+    return this.httpClient.get<any[]>(this.urlApi);
+  }
+  ```
+  ```javascript
+  export class BotaoComponent implements OnInit {
+    constructor(private servicoApi: ServicoApiService){}
+
+    ngOnInit(): void {
+      this.servicoApi.getRepositorios().subscribe({
+        next:(response) => {
+          console.log(response)
+        },
+        error:(error) => {
+          console.error(error)
+        }
+      });
+    }
+  }
   ```
   ### Observable
    - Observable é um tipo de retorno presente em operações assincronas como requisições HTTP
