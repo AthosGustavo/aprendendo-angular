@@ -555,8 +555,8 @@ export class FormularioReativoComponent {
 
     if (this.formulario.valid){
       console.log('Formulário enviado!')
-      console.log(`Nome:${this.formulario.value('nome')}`);
-      console.log(`Nome:${this.formulario.value('numero')}`);
+      console.log(`Nome:${this.formulario.value['nome']}`);
+      console.log(`Nome:${this.formulario.value['numero']}`);
 
     }else{
       console.log('Formulário inválido');
