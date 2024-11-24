@@ -20,16 +20,35 @@
 
   # Escopo de classe e declaração de funções e variáveis
 
-  ### Tips
+  ### Dicas
+  
+  - **Obs 1:Dentro do escopo global da classe, nao se usa `let`, `const` e `var` para declarar variáveis.
+Os atributos da classe devem ser declarados semelhantes a forma que é declarado no Java e as variáveis com as palavras chaves devem ser declaradas dentro do escopo de uma função.**
+  - **Obs 2:A palavra-chave `function` não pode ser usada para declarar métodos diretamente dentro de uma classe no TypeScript**
+     - `Formas de declara um método em uma classe`
+     - ```javascript
+       // Forma clássica
+       // Possíveis problemas ao usar this para referênciar atributos da classe
+       class MyClass {
+          myMethod(): void {
+           console.log("Este é um método padrão");
+          }
+        }
+       ```
+     - ```javascript
+       // Declarar métodos com arrow function garante que o this do método seja sempre vinculado à instância da classe
 
-  - Obs 1:*Ao declarar a função com a palavra `function` a palavra this perde o seu
-  comportamento padrão, é como o this apontasse para dentro da função e não mais para classe.*
+       class MyClass {
+         myMethod = (): void => {
+           console.log("Método declarado como arrow function");
+        };
+       }
+       ```
+  - **Obs 3:Ao declarar a função com a palavra `function` a palavra this perde o seu
+  comportamento padrão, é como o this apontasse para dentro da função e não mais para classe.**
 
-  - Obs 2:*Dentro do escopo global da classe, nao se usa `let`, `const` e `var` para declarar métodos.
-Essas palavras são usadas fora da classe e dentro de métodos que estão dentro da classe.*
-
-  - Obs 3:*Qualque método ou atributo que seja da classe e que está sendo acessado dentro de um método
-da classe, deve ser usada a palavra `this`.*
+  - **Obs 4: Qualque método ou atributo que seja da classe e que está sendo acessado dentro de um método
+da classe, deve ser usada a palavra `this`.**
   
 </details>
 <details>
