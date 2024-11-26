@@ -364,6 +364,43 @@ da classe, deve ser usada a palavra `this`.**
   }
 
   ```
+ <details>
+   <summary>Propagação de eventos</summary>
+
+   ### Click
+
+   - As variáveis passadas para o método infoLogin no template são reconhecidas devido a declaração da diretiva ngModule
+   
+   ```html
+   <div>
+    <label>Email</label>
+    <input name="email" [(ngModel)]="email" placeholder="Digite o seu e-mail"type="text">
+    <label>Senha</label>
+    <input name="senha" [(ngModel)]="senha" placeholder="Digite a sua senha"type="password">
+    <button (click)="infoLogin(email,senha)">Entrar</button>
+    <p>Esqueci minha senha</p>
+  </div>
+   ```
+   ```javascript
+   export class LoginComponent implements OnInit {
+     public email: string;
+     public senha: string;
+
+     constructor() { }
+
+     ngOnInit(): void {
+     }
+
+     infoLogin = (email: string, senha: string) => {
+      console.log(email);
+      console.log(senha)
+     }
+
+   }
+   ```
+   
+ </details>
+
  ### EventEmmitter
   *Componente filho passando dados para componente pai*
 
