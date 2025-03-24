@@ -22,8 +22,11 @@
 
   ### Dicas
   
-  - **Obs 1:Dentro do escopo global da classe, nao se usa `let`, `const` e `var` para declarar variáveis.
+ - **Obs 1:Dentro do escopo global da classe, nao se usa `let`, `const` e `var` para declarar variáveis.
 Os atributos da classe devem ser declarados semelhantes a forma que é declarado no Java e as variáveis com as palavras chaves devem ser declaradas dentro do escopo de uma função.**
+   - O motivo disso se dar, porque o escopo da classe deve ser usado para declarar atributos que sejam da classe e esses atributos não podem ser declarados com essas palavras chaves.As palavras let,const e var servem para declarar valores apenas em escopo escopos locais.
+
+
   - **Obs 2:A palavra-chave `function` não pode ser usada para declarar métodos diretamente dentro de uma classe no TypeScript**
      - `Formas de declara um método em uma classe`
      - ```javascript
