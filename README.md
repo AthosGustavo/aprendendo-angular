@@ -306,33 +306,32 @@ da classe, deve ser usada a palavra `this`.**
 </details>
 
 <details>
-  <summary>Formulários</summary>
+  <summary>Comunicação entre componentes</summary>
   
-  # Formulários
-
-  ## Propriedades de comunicação entre template e componente
+  # Comunicação entre componentes
+  
    - `template` representa o arquivo .html do componente
    - `componente` representa o arquivo .ts
 
   ### Property Binding
-   - "property binding" é um recurso que permite vincular uma propriedade de um elemento do componente a uma expressão no modelo (template).
-
-  #### Vinculando propriedades no fluxo componente -> template
-  *SÍNTAXE*
+   - "property binding" é um recurso que permite vincular propriedade de um componente a uma expressão no template.
+   - Vários fluxos podem ser usados, menos de Pai para filho.
+   - O fluxo é unidirecional, isso quer dizer que em uma mudança de valores, apenas o componente receptor terá o valor atualizado
+     
+  *EXEMPLO*
   ```html
   [propTagHtml] = "propComponente"    // `A propriedade html recebe o valor da propriedade do componente`
   ```
-  *Vinculando valor de tag a uma propriedade componente*
   ```html
-  <p>{{pessoa.nome}}</p>
+  <p>{{pessoa.nome}}</p>  // Vinculando valor de tag a uma propriedade componente
   ```
-  ### Event binding, template -> componente
+  ### Event binding
 
   ### Two way data-binding
-   - A propriedade "Two-way data binding" (ligação de dados bidirecional) é um recurso que permite a sincronização automática de dados entre o modelo (template) e o componente. Em outras palavras, ela permite que as alterações feitas no modelo sejam refletidas no componente e vice-versa,
+   - A propriedade "Two-way data binding" (ligação de dados bidirecional) é um recurso que permite a sincronização automática de dados entre template e componente. Permite que as alterações feitas no modelo sejam refletidas no componente e vice-versa,
    
   #### Diretiva ngModel
-   - O ngModule é uma diretiva que permite vincular o valor digitado em um input em uma variável, qualquer alteração de valor feita no input será refletida na variável.
+   - O ngModule é uma diretiva que permite vincular o valor de um input a uma variável, qualquer tipo de alteração ambos os lados podem ser atualizados.
   
   *SINTAXE*
   ```html
@@ -367,6 +366,12 @@ da classe, deve ser usada a palavra `this`.**
   }
 
   ```
+
+ ### @Input e @Output
+  - Em situações em que um componente pai passar um valor para um componente filho, é necessário usar o decorator @Input na propriedade filha
+  - Com Two way data binding, se usa @Input na propriedade filha e @Output na propriedade Pai
+  - Com Property binding, se usa apenas @Input
+
  <details>
    <summary>Propagação de eventos</summary>
 
